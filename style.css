@@ -220,3 +220,35 @@ tbody tr:nth-child(even) {
 .submit-btn:hover {
     background-color: #555;
 }
+/* Mobile Responsive Rules (Screens smaller than 600px wide) */
+@media (max-width: 600px) {
+    /* Changes layout from side-by-side to stacked columns */
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 10px;
+    }
+
+    /* Allows links to wrap to a new line cleanly if needed */
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    /* Makes the link text slightly larger for easy thumb-tapping */
+    .nav-links a {
+        font-size: 18px;
+        padding: 5px;
+    }
+    
+    /* Shrinks the main headings slightly so they don't break across lines */
+    h1 {
+        font-size: 32px;
+    }
+    
+    h2 {
+        font-size: 24px;
+    }
+}
+
