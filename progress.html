@@ -46,6 +46,47 @@
                 <!-- To add a new log, copy from <tr> to </tr> right below this line -->
             </tbody>
         </table>
+        <script src="https://jsdelivr.net"></script>
+         <!-- 3. The JavaScript Code to Draw Your Graph -->
+    <script>
+        // Get the canvas element from the page
+        const ctx = document.getElementById('weightChart').getContext('2d');
+
+        // Create the graph
+        const weightChart = new Chart(ctx, {
+            type: 'line', // Creates a line chart
+            data: {
+                labels: ['May 23'], // Add your dates here as you log progress
+                datasets: [{
+                    label: 'Weight (lbs)',
+                    data: [220], // Add your matching weight numbers here
+                    borderColor: 'rgb(147, 182, 248)', // Matches your light blue theme
+                    backgroundColor: 'rgba(147, 182, 248, 0.2)',
+                    borderWidth: 3,
+                    tension: 0.2, // Gives the line a slight smooth curve
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: false, // Prevents chart from starting at 0 so changes are easier to see
+                        title: {
+                            display: true,
+                            text: 'Weight in Pounds'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Date Logged'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
     </main>
 
 </body>
