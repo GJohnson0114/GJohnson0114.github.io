@@ -9,13 +9,13 @@
 <body>
 
     <header> 
-         <nav class="navbar">
+        <nav class="navbar">
             <div class="nav-container">
                 <ul class="nav-links">
                     <li><a href="index.html">Main Page</a></li>
                     <li><a href="about.html">About Me</a></li>
-                    <li><a href="projects.html" class="active">Projects</a></li>
-                    <li><a href="progress.html">Progress</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="progress.html" class="active">Progress</a></li> <!-- Fixed Active Class -->
                     <li><a href="Fun.html">Fun</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -27,6 +27,11 @@
         <h1>My Fitness Progress</h1>
         <p>I am tracking my walks and weight loss journey here to keep myself accountable and practice my coding skills.</p>
 
+        <!-- Fixed: Added the physical Canvas tag so the graph has a place to draw -->
+        <div style="max-width: 800px; margin: 30px auto; background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+            <canvas id="weightChart"></canvas>
+        </div>
+
         <!-- Progress Table -->
         <table>
             <thead>
@@ -37,56 +42,54 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- First Log Entry (Example) -->
                 <tr>
                     <td>May 23, 2026 8:50PM</td>
                     <td>299.4 lbs</td>
                     <td>Started my website tracker and went for a walk!</td>
                 </tr>
-                <!-- To add a new log, copy from <tr> to </tr> right below this line -->
             </tbody>
         </table>
-        <script src="https://jsdelivr.net"></script>
-         <!-- 3. The JavaScript Code to Draw Your Graph -->
-    <script>
-        // Get the canvas element from the page
-        const ctx = document.getElementById('weightChart').getContext('2d');
 
-        // Create the graph
-        const weightChart = new Chart(ctx, {
-            type: 'line', // Creates a line chart
-            data: {
-                labels: ['May 23 8:50 pm'], // Add your dates here as you log progress
-                datasets: [{
-                    label: 'Weight (lbs)',
-                    data: [299.4], // Add your matching weight numbers here
-                    borderColor: 'rgb(147, 182, 248)', // Matches your light blue theme
-                    backgroundColor: 'rgba(147, 182, 248, 0.2)',
-                    borderWidth: 3,
-                    tension: 0.2, // Gives the line a slight smooth curve
-                    fill: true
-                }]
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    y: {
-                        beginAtZero: false, // Prevents chart from starting at 0 so changes are easier to see
-                        title: {
-                            display: true,
-                            text: 'Weight in Pounds'
-                        }
-                    },
-                    x: {
-                        title: {
-                            display: true,
-                            text: 'Date Logged'
+        <!-- Fixed: Full link to the Chart.js library -->
+        <script src="https://jsdelivr.net"></script>
+
+        <!-- The JavaScript Code to Draw Your Graph -->
+        <script>
+            const ctx = document.getElementById('weightChart').getContext('2d');
+            const weightChart = new Chart(ctx, {
+                type: 'line', 
+                data: {
+                    labels: ['May 23 8:50 pm'], 
+                    datasets: [{
+                        label: 'Weight (lbs)',
+                        data: [299.4], 
+                        borderColor: 'rgb(147, 182, 248)', 
+                        backgroundColor: 'rgba(147, 182, 248, 0.2)',
+                        borderWidth: 3,
+                        tension: 0.2, 
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: false, 
+                            title: {
+                                display: true,
+                                text: 'Weight in Pounds'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Date Logged'
+                            }
                         }
                     }
                 }
-            }
-        });
-    </script>
+            });
+        </script>
     </main>
 
 </body>
