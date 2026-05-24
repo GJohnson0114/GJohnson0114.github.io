@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Weight Loss Progress Tracker</title>
+    <!-- 1. Load the Charting Engine here in the head so it is ready before the body loads -->
+    <script src="https://jsdelivr.net"></script>
 </head>
 <body>
 
@@ -27,11 +29,10 @@
         <h1>My Fitness Progress</h1>
         <p>I am tracking my walks and weight loss journey here to keep myself accountable and practice my coding skills.</p>
 
-        <!-- Added height: 400px and position: relative to force the box open -->
-<div style="max-width: 800px; height: 400px; position: relative; margin: 30px auto; background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-    <canvas id="weightChart"></canvas>
-</div>
-
+        <!-- 2. This Container block forces the white box to be 400 pixels tall -->
+        <div style="max-width: 800px; height: 400px; position: relative; margin: 30px auto; background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); box-sizing: border-box;">
+            <canvas id="weightChart"></canvas>
+        </div>
 
         <!-- Progress Table -->
         <table>
@@ -48,7 +49,6 @@
                     <td>299.4 lbs</td>
                     <td>Started my website tracker and went for a walk!</td>
                 </tr>
-                <!-- Added a matching row for your second data entry point -->
                 <tr>
                     <td>May 30, 2026 8:00PM</td>
                     <td>297.1 lbs</td>
@@ -57,49 +57,48 @@
             </tbody>
         </table>
 
-        <!-- Make sure this link is exactly as written here -->
-<script src="https://jsdelivr.net"></script>
-
-<script>
-    const ctx = document.getElementById('weightChart').getContext('2d');
-    const weightChart = new Chart(ctx, {
-        type: 'line', 
-        data: {
-            labels: ['May 23 8:50 pm', 'May 30 8:00 pm'], 
-            datasets: [{
-                label: 'Weight (lbs)',
-                data: [299.4, 297.1], 
-                borderColor: 'rgb(147, 182, 248)', 
-                backgroundColor: 'rgba(147, 182, 248, 0.2)',
-                borderWidth: 3,
-                pointRadius: 8,       
-                pointHoverRadius: 12, 
-                tension: 0.2, 
-                fill: true
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false, /* Added to help it scale nicely inside the box */
-            scales: {
-                y: {
-                    beginAtZero: false, 
-                    title: {
-                        display: true,
-                        text: 'Weight in Pounds'
-                    }
+        <!-- 3. The Script executing your custom variables -->
+        <script>
+            // Ensure the DOM has the canvas ready
+            const ctx = document.getElementById('weightChart').getContext('2d');
+            
+            const weightChart = new Chart(ctx, {
+                type: 'line', 
+                data: {
+                    labels: ['May 23 8:50 pm', 'May 30 8:00 pm'], 
+                    datasets: [{
+                        label: 'Weight (lbs)',
+                        data: [299.4, 297.1], 
+                        borderColor: 'rgb(147, 182, 248)', 
+                        backgroundColor: 'rgba(147, 182, 248, 0.2)',
+                        borderWidth: 3,
+                        pointRadius: 8,       
+                        pointHoverRadius: 12, 
+                        tension: 0.2, 
+                        fill: true
+                    }]
                 },
-                x: {
-                    title: {
-                        display: true,
-                        text: 'Date Logged'
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false, // Forces the graph to fill the 400px tall box
+                    scales: {
+                        y: {
+                            beginAtZero: false, 
+                            title: {
+                                display: true,
+                                text: 'Weight in Pounds'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Date Logged'
+                            }
+                        }
                     }
                 }
-            }
-        }
-    });
-</script>
-
+            });
+        </script>
     </main>
 
 </body>
