@@ -32,7 +32,6 @@
             <h3 style="margin-top: 0; color: #333; font-size: 18px; font-family: Arial, sans-serif; text-align: left; margin-bottom: 20px;">Weight Timeline (lbs)</h3>
             
             <div style="position: relative; width: 100%; max-width: 600px; margin: 0 auto;">
-                <!-- Responsive SVG Graph Box -->
                 <svg viewBox="0 0 600 300" style="width: 100%; height: auto; display: block;">
                     <!-- Grid Background Lines -->
                     <line x1="50" y1="50" x2="550" y2="50" stroke="#f0f0f0" stroke-width="1" />
@@ -45,20 +44,14 @@
                     <text x="40" y="155" font-family="Arial" font-size="12" fill="#666" text-anchor="end">298 lbs</text>
                     <text x="40" y="255" font-family="Arial" font-size="12" fill="#666" text-anchor="end">296 lbs</text>
 
-                    <!-- Downward Progress Line connecting May 23 to May 30 -->
-                    <path d="M 150 75 L 450 205" fill="none" stroke="rgb(147, 182, 248)" stroke-width="4" stroke-linecap="round" />
+                    <!-- May 23 Starting Data Point Circle -->
+                    <circle cx="100" cy="65" r="7" fill="rgb(147, 182, 248)" stroke="#fff" stroke-width="2" />
 
-                    <!-- Data Point Circles -->
-                    <circle cx="150" cy="75" r="7" fill="rgb(147, 182, 248)" stroke="#fff" stroke-width="2" />
-                    <circle cx="450" cy="205" r="7" fill="rgb(147, 182, 248)" stroke="#fff" stroke-width="2" />
-
-                    <!-- Weight Indicators over the points -->
-                    <text x="150" y="60" font-family="Arial" font-size="14" font-weight="bold" fill="#333" text-anchor="middle">299.4</text>
-                    <text x="450" y="190" font-family="Arial" font-size="14" font-weight="bold" fill="#333" text-anchor="middle">297.1</text>
+                    <!-- Weight Indicator over the point -->
+                    <text x="100" y="50" font-family="Arial" font-size="14" font-weight="bold" fill="#333" text-anchor="middle">299.4</text>
 
                     <!-- Graph Labels X-Axis (Dates) -->
-                    <text x="150" y="275" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">May 23</text>
-                    <text x="450" y="275" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">May 30</text>
+                    <text x="100" y="275" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">May 23 (Night)</text>
                 </svg>
             </div>
         </div>
@@ -77,11 +70,6 @@
                     <td>May 23, 2026 8:50PM</td>
                     <td>299.4 lbs</td>
                     <td>Started my website tracker and went for a walk!</td>
-                </tr>
-                <tr>
-                    <td>May 30, 2026 8:00PM</td>
-                    <td>297.1 lbs</td>
-                    <td>Completed my first full week of tracking and kept walking!</td>
                 </tr>
             </tbody>
         </table>
