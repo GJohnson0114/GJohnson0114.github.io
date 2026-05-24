@@ -55,48 +55,49 @@
             </tbody>
         </table>
 
-        <!-- Fixed: Restored the complete working Chart.js library link -->
-        <script src="https://jsdelivr.net"></script>
+        <!-- Make sure this link is exactly as written here -->
+<script src="https://jsdelivr.net"></script>
 
-        <!-- The JavaScript Code to Draw Your Graph -->
-        <script>
-            const ctx = document.getElementById('weightChart').getContext('2d');
-            const weightChart = new Chart(ctx, {
-                type: 'line', 
-                data: {
-                    labels: ['May 23 8:50 pm', 'May 30 8:00 pm'], 
-                    datasets: [{
-                        label: 'Weight (lbs)',
-                        data: [299.4, 297.1], 
-                        borderColor: 'rgb(147, 182, 248)', 
-                        backgroundColor: 'rgba(147, 182, 248, 0.2)',
-                        borderWidth: 3,
-                        pointRadius: 8,       
-                        pointHoverRadius: 12, 
-                        tension: 0.2, 
-                        fill: true
-                    }]
+<script>
+    const ctx = document.getElementById('weightChart').getContext('2d');
+    const weightChart = new Chart(ctx, {
+        type: 'line', 
+        data: {
+            labels: ['May 23 8:50 pm', 'May 30 8:00 pm'], 
+            datasets: [{
+                label: 'Weight (lbs)',
+                data: [299.4, 297.1], 
+                borderColor: 'rgb(147, 182, 248)', 
+                backgroundColor: 'rgba(147, 182, 248, 0.2)',
+                borderWidth: 3,
+                pointRadius: 8,       
+                pointHoverRadius: 12, 
+                tension: 0.2, 
+                fill: true
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false, /* Added to help it scale nicely inside the box */
+            scales: {
+                y: {
+                    beginAtZero: false, 
+                    title: {
+                        display: true,
+                        text: 'Weight in Pounds'
+                    }
                 },
-                options: {
-                    responsive: true,
-                    scales: {
-                        y: {
-                            beginAtZero: false, 
-                            title: {
-                                display: true,
-                                text: 'Weight in Pounds'
-                            }
-                        },
-                        x: {
-                            title: {
-                                display: true,
-                                text: 'Date Logged'
-                            }
-                        }
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Date Logged'
                     }
                 }
-            });
-        </script>
+            }
+        }
+    });
+</script>
+
     </main>
 
 </body>
