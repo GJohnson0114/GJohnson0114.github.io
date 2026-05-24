@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" style="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Weight Loss Progress Tracker</title>
 </head>
@@ -44,14 +44,20 @@
                     <text x="40" y="155" font-family="Arial" font-size="12" fill="#666" text-anchor="end">298 lbs</text>
                     <text x="40" y="255" font-family="Arial" font-size="12" fill="#666" text-anchor="end">296 lbs</text>
 
-                    <!-- May 23 Starting Data Point Circle -->
-                    <circle cx="100" cy="65" r="7" fill="rgb(147, 182, 248)" stroke="#fff" stroke-width="2" />
+                    <!-- Downward Progress Line connecting May 23 Night to May 24 Morning -->
+                    <path d="M 100 65 L 250 115" fill="none" stroke="rgb(147, 182, 248)" stroke-width="4" stroke-linecap="round" />
 
-                    <!-- Weight Indicator over the point -->
+                    <!-- Data Point Circles -->
+                    <circle cx="100" cy="65" r="7" fill="rgb(147, 182, 248)" stroke="#fff" stroke-width="2" />
+                    <circle cx="250" cy="115" r="7" fill="rgb(147, 182, 248)" stroke="#fff" stroke-width="2" />
+
+                    <!-- Weight Indicators over the points -->
                     <text x="100" y="50" font-family="Arial" font-size="14" font-weight="bold" fill="#333" text-anchor="middle">299.4</text>
+                    <text x="250" y="100" font-family="Arial" font-size="14" font-weight="bold" fill="#333" text-anchor="middle">298.7</text>
 
                     <!-- Graph Labels X-Axis (Dates) -->
                     <text x="100" y="275" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">May 23 (Night)</text>
+                    <text x="250" y="275" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">May 24 (Morning)</text>
                 </svg>
             </div>
         </div>
@@ -70,6 +76,12 @@
                     <td>May 23, 2026 8:50PM</td>
                     <td>299.4 lbs</td>
                     <td>Started my website tracker and went for a walk!</td>
+                </tr>
+                <!-- Added your morning log row here -->
+                <tr>
+                    <td>May 24, 2026 9:05AM</td>
+                    <td>298.7 lbs</td>
+                    <td>First morning weigh-in. Down 0.7 lbs!</td>
                 </tr>
             </tbody>
         </table>
