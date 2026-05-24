@@ -31,9 +31,11 @@ h2 {
 p { 
     font-size: 18px; 
     max-width: 800px;
-    margin: 20px auto; /* Centers the block itself */
+    margin: 20px auto; /* Keeps the text block container centered on the screen */
+    text-align: left;  /* Aligns the sentences neatly to the left edge */
     padding: 0 20px;
 }
+
 
 
 /* Navbar Layout */
