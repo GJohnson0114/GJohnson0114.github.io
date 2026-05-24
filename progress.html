@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Weight Loss Progress Tracker</title>
-    <!-- 1. Load the Charting Engine here in the head so it is ready before the body loads -->
-    <script src="https://jsdelivr.net"></script>
 </head>
 <body>
 
@@ -29,9 +27,40 @@
         <h1>My Fitness Progress</h1>
         <p>I am tracking my walks and weight loss journey here to keep myself accountable and practice my coding skills.</p>
 
-        <!-- 2. This Container block forces the white box to be 400 pixels tall -->
-        <div style="max-width: 800px; height: 400px; position: relative; margin: 30px auto; background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); box-sizing: border-box;">
-            <canvas id="weightChart"></canvas>
+        <!-- Pure HTML Graph Container Box -->
+        <div style="max-width: 800px; margin: 30px auto; background-color: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); box-sizing: border-box; text-align: center;">
+            <h3 style="margin-top: 0; color: #333; font-size: 18px; font-family: Arial, sans-serif; text-align: left; margin-bottom: 20px;">Weight Timeline (lbs)</h3>
+            
+            <div style="position: relative; width: 100%; max-width: 600px; margin: 0 auto;">
+                <!-- Responsive SVG Graph Box -->
+                <svg viewBox="0 0 600 300" style="width: 100%; height: auto; display: block;">
+                    <!-- Grid Background Lines -->
+                    <line x1="50" y1="50" x2="550" y2="50" stroke="#f0f0f0" stroke-width="1" />
+                    <line x1="50" y1="150" x2="550" y2="150" stroke="#f0f0f0" stroke-width="1" />
+                    <line x1="50" y1="250" x2="550" y2="250" stroke="#ddd" stroke-width="2" />
+                    <line x1="50" y1="50" x2="50" y2="250" stroke="#ddd" stroke-width="2" />
+
+                    <!-- Graph Labels Y-Axis (Weights) -->
+                    <text x="40" y="55" font-family="Arial" font-size="12" fill="#666" text-anchor="end">300 lbs</text>
+                    <text x="40" y="155" font-family="Arial" font-size="12" fill="#666" text-anchor="end">298 lbs</text>
+                    <text x="40" y="255" font-family="Arial" font-size="12" fill="#666" text-anchor="end">296 lbs</text>
+
+                    <!-- Downward Progress Line connecting May 23 to May 30 -->
+                    <path d="M 150 75 L 450 205" fill="none" stroke="rgb(147, 182, 248)" stroke-width="4" stroke-linecap="round" />
+
+                    <!-- Data Point Circles -->
+                    <circle cx="150" cy="75" r="7" fill="rgb(147, 182, 248)" stroke="#fff" stroke-width="2" />
+                    <circle cx="450" cy="205" r="7" fill="rgb(147, 182, 248)" stroke="#fff" stroke-width="2" />
+
+                    <!-- Weight Indicators over the points -->
+                    <text x="150" y="60" font-family="Arial" font-size="14" font-weight="bold" fill="#333" text-anchor="middle">299.4</text>
+                    <text x="450" y="190" font-family="Arial" font-size="14" font-weight="bold" fill="#333" text-anchor="middle">297.1</text>
+
+                    <!-- Graph Labels X-Axis (Dates) -->
+                    <text x="150" y="275" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">May 23</text>
+                    <text x="450" y="275" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">May 30</text>
+                </svg>
+            </div>
         </div>
 
         <!-- Progress Table -->
@@ -56,49 +85,6 @@
                 </tr>
             </tbody>
         </table>
-
-        <!-- 3. The Script executing your custom variables -->
-        <script>
-            // Ensure the DOM has the canvas ready
-            const ctx = document.getElementById('weightChart').getContext('2d');
-            
-            const weightChart = new Chart(ctx, {
-                type: 'line', 
-                data: {
-                    labels: ['May 23 8:50 pm', 'May 30 8:00 pm'], 
-                    datasets: [{
-                        label: 'Weight (lbs)',
-                        data: [299.4, 297.1], 
-                        borderColor: 'rgb(147, 182, 248)', 
-                        backgroundColor: 'rgba(147, 182, 248, 0.2)',
-                        borderWidth: 3,
-                        pointRadius: 8,       
-                        pointHoverRadius: 12, 
-                        tension: 0.2, 
-                        fill: true
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false, // Forces the graph to fill the 400px tall box
-                    scales: {
-                        y: {
-                            beginAtZero: false, 
-                            title: {
-                                display: true,
-                                text: 'Weight in Pounds'
-                            }
-                        },
-                        x: {
-                            title: {
-                                display: true,
-                                text: 'Date Logged'
-                            }
-                        }
-                    }
-                }
-            });
-        </script>
     </main>
 
 </body>
