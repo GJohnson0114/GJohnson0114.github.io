@@ -10,8 +10,5 @@
     <p>This is my first actual website, I have only made "websites" that were only on my computer</p>
     <p>This Website is going to show what I have learned so far, it is going to have some CSS and some JavaScript </p>
 </body>
-<script>html{
-    background-color: antiquewhite;
-}
-</script>
+
 </html>
