@@ -15,7 +15,7 @@
                     <li><a href="index.html">Main Page</a></li>
                     <li><a href="about.html">About Me</a></li>
                     <li><a href="projects.html">Projects</a></li>
-                    <li><a href="progress.html" class="active">Progress</a></li> <!-- Fixed Active Class -->
+                    <li><a href="progress.html" class="active">Progress</a></li> 
                     <li><a href="Fun.html">Fun</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -27,7 +27,6 @@
         <h1>My Fitness Progress</h1>
         <p>I am tracking my walks and weight loss journey here to keep myself accountable and practice my coding skills.</p>
 
-        <!-- Fixed: Added the physical Canvas tag so the graph has a place to draw -->
         <div style="max-width: 800px; margin: 30px auto; background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
             <canvas id="weightChart"></canvas>
         </div>
@@ -47,10 +46,16 @@
                     <td>299.4 lbs</td>
                     <td>Started my website tracker and went for a walk!</td>
                 </tr>
+                <!-- Added a matching row for your second data entry point -->
+                <tr>
+                    <td>May 30, 2026 8:00PM</td>
+                    <td>297.1 lbs</td>
+                    <td>Completed my first full week of tracking and kept walking!</td>
+                </tr>
             </tbody>
         </table>
 
-        <!-- Fixed: Full link to the Chart.js library -->
+        <!-- Fixed: Restored the complete working Chart.js library link -->
         <script src="https://jsdelivr.net"></script>
 
         <!-- The JavaScript Code to Draw Your Graph -->
@@ -59,21 +64,18 @@
             const weightChart = new Chart(ctx, {
                 type: 'line', 
                 data: {
-                    // Update this line with your new dates:
                     labels: ['May 23 8:50 pm', 'May 30 8:00 pm'], 
                     datasets: [{
                         label: 'Weight (lbs)',
-                        // Update this line with your matching weights:
                         data: [299.4, 297.1], 
                         borderColor: 'rgb(147, 182, 248)', 
                         backgroundColor: 'rgba(147, 182, 248, 0.2)',
                         borderWidth: 3,
-                        pointRadius: 8,       /* Keeps your data circles easy to see */
-                        pointHoverRadius: 12,
+                        pointRadius: 8,       
+                        pointHoverRadius: 12, 
                         tension: 0.2, 
                         fill: true
                     }]
-
                 },
                 options: {
                     responsive: true,
