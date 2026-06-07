@@ -10,8 +10,10 @@ body {
     line-height: 1.6;
 }
 img {
-    width:500px;
+    width:300px;
     height: auto;
+    display: block; 
+    margin: 0 auto;
 }
 /* Typography Scales */
 /* Centers your main heading */
