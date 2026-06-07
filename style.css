@@ -9,7 +9,10 @@ body {
     color: #222; /* Dark text for readability on blue */
     line-height: 1.6;
 }
-
+img {
+    width:500px;
+    height: auto;
+}
 /* Typography Scales */
 /* Centers your main heading */
 h1 { 
